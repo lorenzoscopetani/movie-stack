@@ -18,9 +18,11 @@ const Header = () => {
 					Movie<span>Stack</span>
 				</Link>
 			</h1>
-			<div className="hamburger" onClick={handleMenuOpen}>
-				<i className={menuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
-			</div>
+			{currentUser && (
+				<div className="hamburger" onClick={handleMenuOpen}>
+					<i className={menuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
+				</div>
+			)}
 			{currentUser && (
 				<Navbar closeMobileMenu={closeMobileMenu} menuOpen={menuOpen} />
 			)}
