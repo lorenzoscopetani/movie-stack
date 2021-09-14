@@ -1,0 +1,83 @@
+.navbar {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin-right: 15px;
+}
+
+.navbar > li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.navbar > li > a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.navbar > li > a:hover {
+	color: #e50914;
+	transition: all 0.2s ease-in-out;
+}
+
+.navbar > button {
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 12px;
+	outline: none;
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #e50914;
+	padding: 20px 17px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.navbar > button:hover {
+	background-color: #a40a11;
+	transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+	.navbar {
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 60px);
+		top: 60px;
+		padding-top: 80px;
+		opacity: 0;
+		pointer-events: none;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+		background-color: #111;
+		transition: all 0.4s ease-in-out;
+	}
+
+	.navbar.active {
+		opacity: 1;
+		pointer-events: all;
+		z-index: 1;
+	}
+
+	.navbar > li > a {
+		font-size: 25px;
+	}
+
+	.navbar > button {
+		margin-left: 0;
+		margin-top: 30px;
+		font-size: 25px;
+		padding: 30px 20px;
+	}
+}

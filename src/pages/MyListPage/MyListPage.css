@@ -1,0 +1,29 @@
+.mylist-page {
+	background-color: #111;
+	min-height: calc(100vh - 60px);
+	color: #fff;
+	padding: 15px;
+}
+
+.mylist-page > h1 {
+	font-size: 30px;
+}
+
+.mylist-page__container {
+	margin-top: 30px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mylist-page__container > h2 {
+	font-size: 35px;
+	margin-top: 30px;
+	color: #3f3f3f;
+}
+
+@media (max-width: 768px) {
+	.mylist-page__container {
+		justify-content: center;
+	}
+}

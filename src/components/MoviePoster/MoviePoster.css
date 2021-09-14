@@ -1,0 +1,21 @@
+.movie-poster {
+	width: 135px;
+	height: auto;
+	object-fit: contain;
+	margin-right: 10px;
+	transition: transform 0.45s;
+}
+
+.filled-poster {
+	width: 135px;
+	height: 202.5px;
+	object-fit: contain;
+	margin-right: 10px;
+	transition: transform 0.45s;
+	background-color: #4f4f4f;
+}
+
+.movie-poster:hover,
+.filled-poster:hover {
+	transform: scale(1.05);
+}
