@@ -2,7 +2,8 @@
 
 ### General Info
 This web app is based on [TMDB](https://www.themoviedb.org/?language=it-IT) API and it was created with React + Firebase Authentication.
-It's a movies web app, wher you can discover movies from genre, search a specific movie, watch trailer and add movies to your list, saved on Local Storage
+It's a movies web app, wher you can discover movies from genre, search a specific movie, watch trailer and add movies to your list, saved on Local Storage.
+You can update your profile changing your password.
 
 ### Technologies
 * [React](https://reactjs.org/)
