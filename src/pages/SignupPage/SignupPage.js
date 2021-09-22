@@ -40,7 +40,7 @@ const SignupPage = () => {
 					Sign <span>Up</span>
 				</h2>
 				{error && <p>{error}</p>}
-				<form onSubmit={handleSubmit}>
+				<form className="signup-form" onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label>Email</label>
 						<input

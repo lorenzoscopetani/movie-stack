@@ -29,6 +29,10 @@ export const GlobalProvider = ({ children }) => {
 		return auth.signOut();
 	};
 
+	const updatePassword = (password) => {
+		return currentUser.updatePassword(password);
+	};
+
 	const addToMyList = (movie) => {
 		setMyList([...myList, movie]);
 	};
@@ -56,6 +60,7 @@ export const GlobalProvider = ({ children }) => {
 		signup,
 		login,
 		logout,
+		updatePassword,
 	};
 
 	return (

@@ -35,7 +35,7 @@ const LoginPage = () => {
 					Log <span>In</span>
 				</h2>
 				{error && <p>{error}</p>}
-				<form onSubmit={handleSubmit}>
+				<form className="login-form" onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label>Email</label>
 						<input

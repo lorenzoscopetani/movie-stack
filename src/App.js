@@ -10,6 +10,8 @@ import PrivateRoute from './components/PrivateRoute';
 import MoviePage from './pages/MoviePage/MoviePage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import MyListPage from './pages/MyListPage/MyListPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import UpdateProfilePage from './pages/UpdateProfilePage/UpdateProfilePage';
 
 function App() {
 	return (
@@ -23,6 +25,12 @@ function App() {
 						<Route exact path="/signup" component={SignupPage} />
 						<PrivateRoute exact path="/search" component={SearchPage} />
 						<PrivateRoute exact path="/mylist" component={MyListPage} />
+						<PrivateRoute exact path="/profile" component={ProfilePage} />
+						<PrivateRoute
+							exact
+							path="/update_profile"
+							component={UpdateProfilePage}
+						/>
 						<PrivateRoute exact path="/:id" component={MoviePage} />
 					</Switch>
 				</GlobalProvider>

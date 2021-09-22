@@ -4,11 +4,14 @@ import axios from '../../axios';
 import './MoviePage.css';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import BeatLoader from 'react-spinners/BeatLoader';
 
 const MoviePage = (props) => {
 	const [movie, setMovie] = useState({});
 	const [trailerUrl, setTrailerUrl] = useState('');
 	const { myList, addToMyList, removeFromMyList } = useContext(GlobalContext);
+
+	const [loading, setLoading] = useState(false);
 
 	const movieId = props.match.params.id;
 	const movieUrl = `/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
@@ -31,20 +34,25 @@ const MoviePage = (props) => {
 	};
 
 	const watchTrailer = (movie) => {
+		setLoading(true);
 		if (trailerUrl) {
 			setTrailerUrl('');
+			setLoading(false);
 		} else {
-			movieTrailer(movie?.title || '')
-				.then((url) => {
+			try {
+				movieTrailer(movie?.title || '').then((url) => {
 					const urlParams = new URLSearchParams(new URL(url).search);
 					setTrailerUrl(urlParams.get('v'));
-				})
-				.catch((error) => console.log(error));
+					setLoading(false);
+				});
+			} catch (error) {
+				console.log(error);
+			}
 		}
 	};
 
 	const opts = {
-		height: '390',
+		height: '650',
 		width: '100%',
 		playerVars: {
 			autoPlay: 1,
@@ -84,7 +92,11 @@ const MoviePage = (props) => {
 					</div>
 				</div>
 			</div>
-			{trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+			{loading ? (
+				<BeatLoader color={'#fff'} loading={loading} size={18} margin={5} />
+			) : (
+				trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />
+			)}
 		</div>
 	);
 };
